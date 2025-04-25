@@ -79,6 +79,7 @@ public class CMarqueeView: UIView {
         secondLabel.frame = CGRect(x: textWidth + spacing, y: 0, width: textWidth, height: bounds.height)
         
         if textWidth > bounds.width {
+            secondLabel.isHidden = false
             stopScrolling()
             DispatchQueue.main.asyncAfter(deadline: .now() + startDelay) { [weak self] in
                 self?.startScrolling()
